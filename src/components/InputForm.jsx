@@ -9,22 +9,21 @@ const InputForm = () => {
   const handleAddClick = () => {
     if (task !== "") {
       dispatch(addTodo(task));
-      setNewTodoText("");
+      setTask("");
     }
   };
 
   return (
     <div className="flex items-center mb-4">
       <input
-        id="addTodoInput"
-        className="flex-grow p-4 bg-white text-xl border-b-1 border-gray-400  focus:outline-none focus:border-blue-500"
+        className="flex-grow p-4 bg-white text-xl border-b-1 border-gray-400 focus:outline-none focus:border-blue-500 cursor-pointer"
         type="text"
-        placeholder="Add Todo"
+        placeholder="Add Task"
         value={task}
         onChange={(e) => setTask(e.target.value)}
       />
       <button
-        className="ml-4 p-4 bg-blue-500 text-xl font-bold text-white rounded hover:bg-blue-600 focus:outline-none"
+        className="ml-4 p-4 bg-blue-500 text-xl font-bold text-white rounded hover:bg-blue-600 focus:outline-none cursor-pointer"
         onClick={handleAddClick}
       >
         ADD

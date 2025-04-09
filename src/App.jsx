@@ -1,5 +1,6 @@
 import { useState } from "react";
 import InputForm from "./components/InputForm";
+import TodoList from "./components/ToDoList";
 import "./App.css";
 
 function App() {
@@ -11,11 +12,11 @@ function App() {
             TODO APP
           </h1>
           <InputForm />
+          <TodoList />
         </div>
       </div>
     </>
   );
 }
-
 
 export default App;
