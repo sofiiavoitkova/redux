@@ -3,11 +3,12 @@ import {
   REMOVE_TODO,
   MARK_COMPLETED,
   MARK_INCOMPLETE,
+  SET_FILTER,
 } from "./actions";
 
 const initialState = {
   todo: [],
-  searchTerm: "",
+  filter: "ALL",
 };
 
 const reducer = (state = initialState, action) => {
@@ -42,6 +43,11 @@ const reducer = (state = initialState, action) => {
         todo: state.todo.map((todo, idx) =>
           idx === action.payload ? { ...todo, completed: false } : todo
         ),
+      };
+    case SET_FILTER:
+      return {
+        ...state,
+        filter: action.payload,
       };
     default:
       return state;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InputForm from "./components/InputForm";
 import TodoList from "./components/ToDoList";
+import FilterButtons from "./components/FilterButton";
 import "./App.css";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
             TODO APP
           </h1>
           <InputForm />
+          <FilterButtons />
           <TodoList />
         </div>
       </div>
