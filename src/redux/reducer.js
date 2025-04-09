@@ -4,7 +4,7 @@ import {
   MARK_COMPLETED,
   MARK_INCOMPLETE,
   SET_FILTER,
-} from "./actions";
+} from "./actionTypes";
 
 const initialState = {
   todo: [],
