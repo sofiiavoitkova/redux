@@ -1,6 +1,5 @@
-import { useState } from "react";
 import InputForm from "./components/InputForm";
-import TodoList from "./components/ToDoList";
+import TodoList from "./components/TodoList";
 import FilterButtons from "./components/FilterButton";
 import "./App.css";
 
