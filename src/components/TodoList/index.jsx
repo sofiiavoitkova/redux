@@ -1,9 +1,13 @@
 import TodoItem from "./components/TodoItem";
 import { useSelector } from "react-redux";
+import {
+  selectTodoList,
+  selectTodoFilter,
+} from "../../redux/selectors/todoSelectors";
 
 const TodoList = () => {
-  const todo = useSelector((state) => state.todo);
-  const filter = useSelector((state) => state.filter);
+  const todo = useSelector(selectTodoList);
+  const filter = useSelector(selectTodoFilter);
 
   const filteredTasks = todo.filter((todo) => {
     if (filter === "COMPLETED") return todo.completed;
@@ -18,8 +22,8 @@ const TodoList = () => {
           No tasks yet. Add one above!
         </li>
       ) : (
-        filteredTasks.map((todo, index) => (
-          <TodoItem key={todo.id} todo={todo} index={index} />
+        filteredTasks.map((todo, id) => (
+          <TodoItem key={todo.id} todo={todo} id={id} />
         ))
       )}
     </ul>

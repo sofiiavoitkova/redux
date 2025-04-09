@@ -4,26 +4,26 @@ import {
   MARK_COMPLETED,
   MARK_INCOMPLETE,
   SET_FILTER,
-} from "./actionTypes";
+} from "../constants/actionTypes";
 
 export const addTodo = (text) => ({
   type: ADD_TODO,
   payload: text,
 });
 
-export const removeTodo = (index) => ({
+export const removeTodo = (id) => ({
   type: REMOVE_TODO,
-  payload: index,
+  payload: id,
 });
 
-export const markCompleted = (index) => ({
+export const markCompleted = (id) => ({
   type: MARK_COMPLETED,
-  payload: index,
+  payload: id,
 });
 
-export const markIncomplete = (index) => ({
+export const markIncomplete = (id) => ({
   type: MARK_INCOMPLETE,
-  payload: index,
+  payload: id,
 });
 
 export const setFilter = (filter) => ({

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../redux/actions";
+import { addTodo } from "../redux/actions/todoActions";
 
 const InputForm = () => {
   const dispatch = useDispatch();

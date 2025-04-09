@@ -4,7 +4,7 @@ import {
   MARK_COMPLETED,
   MARK_INCOMPLETE,
   SET_FILTER,
-} from "./actionTypes";
+} from "../constants/actionTypes";
 
 const initialState = {
   todo: [],
@@ -28,20 +28,20 @@ const reducer = (state = initialState, action) => {
     case REMOVE_TODO:
       return {
         ...state,
-        todo: state.todo.filter((_, idx) => idx !== action.payload),
+        todo: state.todo.filter((todo) => todo.id !== action.payload),
       };
     case MARK_COMPLETED:
       return {
         ...state,
-        todo: state.todo.map((todo, idx) =>
-          idx === action.payload ? { ...todo, completed: true } : todo
+        todo: state.todo.map((todo) =>
+          todo.id === action.payload ? { ...todo, completed: true } : todo
         ),
       };
     case MARK_INCOMPLETE:
       return {
         ...state,
-        todo: state.todo.map((todo, idx) =>
-          idx === action.payload ? { ...todo, completed: false } : todo
+        todo: state.todo.map((todo) =>
+          id === action.payload ? { ...todo, completed: false } : todo
         ),
       };
     case SET_FILTER:

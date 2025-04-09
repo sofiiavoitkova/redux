@@ -3,14 +3,14 @@ import {
   removeTodo,
   markCompleted,
   markIncomplete,
-} from "../../../redux/actions";
+} from "../../../redux/actions/todoActions";
 import { FaTrash, FaCheckSquare, FaRegSquare } from "react-icons/fa";
 
-const TodoItem = ({ todo, index }) => {
+const TodoItem = ({ todo }) => {
   const dispatch = useDispatch();
 
   const toggleComplete = () => {
-    dispatch(todo.completed ? markIncomplete(index) : markCompleted(index));
+    dispatch(todo.completed ? markIncomplete(todo.id) : markCompleted(todo.id));
   };
 
   return (
@@ -32,7 +32,7 @@ const TodoItem = ({ todo, index }) => {
       <div className="space-x-3 ml-8">
         <button
           className="text-sm cursor-pointer bg-red-500 text-white sm:px-4 py-4 rounded"
-          onClick={() => dispatch(removeTodo(index))}
+          onClick={() => dispatch(removeTodo(todo.id))}
         >
           <FaTrash />
         </button>
