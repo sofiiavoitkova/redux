@@ -14,7 +14,7 @@ const TodoList = () => {
   return (
     <ul>
       {filteredTasks.length === 0 ? (
-        <li className="my-2 text-lg italic text-gray-500">
+        <li className="my-2 text-xl italic text-gray-500">
           No tasks yet. Add one above!
         </li>
       ) : (
